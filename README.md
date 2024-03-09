@@ -1,3 +1,3 @@
 # Object-Oriented-Programming
 
-This folder contains code from the object oriented programming coursey.
+This folder contains code from the object oriented programming course.
