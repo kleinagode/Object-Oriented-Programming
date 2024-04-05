@@ -1,0 +1,12 @@
+10
+John
+15
+Joe
+20
+Jonathan
+25
+Jacob
+10
+Lydia
+30
+Joseph
