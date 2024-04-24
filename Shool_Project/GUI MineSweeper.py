@@ -6,14 +6,16 @@ import ttkbootstrap as ttk
 def start_screen_creation():
 
     def difficulty_picker(button_pressed):
-        #Not finished
-        #When done this function will open up another widow with the game and it's difficulty set
+        
         if button_pressed == 1:
-            print(1)  # Difficulty Easy
+            MineSweeper_window.withdraw() #Closes the window. deiconify() shows it again
+            main_game_screen(1)  # Difficulty Easy
         elif button_pressed == 2:
-            print(2) #Difficulty Moderate
+            MineSweeper_window.withdraw()
+            main_game_screen(2) #Difficulty Moderate
         elif button_pressed == 3:
-            print(3) #Difficulty Hard
+            MineSweeper_window.withdraw()
+            main_game_screen(3) #Difficulty Hard
     
     # Creating a window for the game
     MineSweeper_window = ttk.Window(themename = 'morph') 
@@ -44,6 +46,7 @@ def start_screen_creation():
                                        font= ("White Rabbit",18),
                                        command = lambda: difficulty_picker(3))
     
+
     #Making a button, MAKE SURE THE FONT IS INSTALLED!
     difficulty_button_easy.pack(padx=10,pady=10) 
     difficulty_button_moderate.pack(padx=10,pady=10)
@@ -51,6 +54,23 @@ def start_screen_creation():
 
     #Shows the window on the screen
     MineSweeper_window.mainloop() 
+
+def main_game_screen(difficulty):
+
+    if difficulty == 1:
+        number_of_mines = 10
+    elif difficulty == 2:
+        number_of_mines = 20
+    elif difficulty == 3:
+        number_of_mines = 40
+
+    main_game = ttk.Window(themename = "morph")
+    main_game.geometry("1000x800")
+    main_game.title("Mine Sweeper")
+
+    
+
+    main_game.mainloop()
 
 
 if __name__ == "__main__":
