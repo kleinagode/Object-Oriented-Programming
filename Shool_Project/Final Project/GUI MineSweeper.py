@@ -1,30 +1,32 @@
 
 import tkinter as tk
-import ttkbootstrap as ttk
-
+from tkinter import ttk
+import ttkbootstrap as tb
+import configure
 
 def start_screen_creation():
 
     def difficulty_picker(button_pressed):
         
         if button_pressed == 1:
-            MineSweeper_window.withdraw() #Closes the window. deiconify() shows it again
+            MineSweeper_window.destroy() #Closes the window. deiconify() shows it again
             main_game_screen(1)  # Difficulty Easy
         elif button_pressed == 2:
-            MineSweeper_window.withdraw()
+            MineSweeper_window.destroy()
             main_game_screen(2) #Difficulty Moderate
         elif button_pressed == 3:
-            MineSweeper_window.withdraw()
+            MineSweeper_window.destroy()
             main_game_screen(3) #Difficulty Hard
+
     
     # Creating a window for the game
-    MineSweeper_window = ttk.Window(themename = 'morph') 
+    MineSweeper_window = tb.Window(themename = 'morph') 
 
-    MineSweeper_window.geometry("1000x800")
+    MineSweeper_window.geometry(f"{configure.WIDTH}x{configure.HEIGHT}")
     MineSweeper_window.title("Mine Sweeper")
 
     #This makes lable (make sure to preinstall the font)
-    game_lable = tk.Label(MineSweeper_window, 
+    game_lable = ttk.Label(MineSweeper_window, 
                                 text= "Mine Sweeper The Game",
                                 font= ("Zig",30)) 
     
@@ -64,8 +66,8 @@ def main_game_screen(difficulty):
     elif difficulty == 3:
         number_of_mines = 40
 
-    main_game = ttk.Window(themename = "morph")
-    main_game.geometry("1000x800")
+    main_game = tb.Window(themename = "morph")
+    main_game.geometry(f"{configure.WIDTH}x{configure.HEIGHT}")
     main_game.title("Mine Sweeper")
 
     
