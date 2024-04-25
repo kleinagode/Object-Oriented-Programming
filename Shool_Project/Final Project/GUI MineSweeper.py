@@ -24,6 +24,7 @@ def start_screen_creation():
 
     MineSweeper_window.geometry(f"{configure.WIDTH}x{configure.HEIGHT}")
     MineSweeper_window.title("Mine Sweeper")
+    MineSweeper_window.resizable(False,False)
 
     #This makes lable (make sure to preinstall the font)
     game_lable = ttk.Label(MineSweeper_window, 
@@ -69,7 +70,25 @@ def main_game_screen(difficulty):
     main_game = tb.Window(themename = configure.THEME)
     main_game.geometry(f"{configure.WIDTH}x{configure.HEIGHT}")
     main_game.title("Mine Sweeper")
+    main_game.resizable(False,False)
 
+    def button_click(row, col):
+        print(f"Button clicked at row {row}, column {col}")
+
+    buttons = []
+
+    # Create buttons in a loop and place them in a grid
+    for row in range(8):
+        button_row = []
+        for col in range(8):
+            button = tk.Button(main_game, text="", command=lambda row=row, col=col: button_click(row, col))
+            button.grid(row=row, column=col, padx=2, pady=2)
+            button_row.append(button)
+        buttons.append(button_row)
+
+
+    print(buttons)
+        
     
 
     main_game.mainloop()
