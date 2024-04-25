@@ -20,7 +20,7 @@ def start_screen_creation():
 
     
     # Creating a window for the game
-    MineSweeper_window = tb.Window(themename = 'morph') 
+    MineSweeper_window = tb.Window(themename = configure.THEME) 
 
     MineSweeper_window.geometry(f"{configure.WIDTH}x{configure.HEIGHT}")
     MineSweeper_window.title("Mine Sweeper")
@@ -28,7 +28,7 @@ def start_screen_creation():
     #This makes lable (make sure to preinstall the font)
     game_lable = ttk.Label(MineSweeper_window, 
                                 text= "Mine Sweeper The Game",
-                                font= ("Zig",30)) 
+                                font= configure.HEADER1_FONT) 
     
     #Creates the label and puts in on the screen
     game_lable.pack(padx=30,pady=30) 
@@ -36,16 +36,16 @@ def start_screen_creation():
 
     difficulty_button_easy = tk.Button(MineSweeper_window, 
                                        text="Easy --> 10 Mines",
-                                       font= ("White Rabbit",18),
+                                       font= configure.HEADER2_FONT,
                                        command = lambda: difficulty_picker(1))
     
     difficulty_button_moderate = tk.Button(MineSweeper_window, 
                                            text="Moderate --> 20 Mines",
-                                           font= ("White Rabbit",18),
+                                           font= configure.HEADER2_FONT,
                                            command = lambda: difficulty_picker(2))
     difficulty_button_hard = tk.Button(MineSweeper_window, 
                                        text="Hard --> 40 Mines", 
-                                       font= ("White Rabbit",18),
+                                       font= configure.HEADER2_FONT,
                                        command = lambda: difficulty_picker(3))
     
 
@@ -66,7 +66,7 @@ def main_game_screen(difficulty):
     elif difficulty == 3:
         number_of_mines = 40
 
-    main_game = tb.Window(themename = "morph")
+    main_game = tb.Window(themename = configure.THEME)
     main_game.geometry(f"{configure.WIDTH}x{configure.HEIGHT}")
     main_game.title("Mine Sweeper")
 
