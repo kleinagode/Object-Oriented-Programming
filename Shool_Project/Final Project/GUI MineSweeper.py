@@ -72,6 +72,11 @@ def main_game_screen(difficulty):
     main_game.title("Mine Sweeper")
     main_game.resizable(False,False)
 
+    #Mine fields
+    grid_frame = tk.Frame()
+    grid_frame.config(width=600,height=600,background= configure.FIELD_BG_COLOR)
+    grid_frame.pack(padx= 5, pady= 5)
+
     def button_click(row, col):
         print(f"Button clicked at row {row}, column {col}")
 
@@ -81,10 +86,15 @@ def main_game_screen(difficulty):
     for row in range(8):
         button_row = []
         for col in range(8):
-            button = tk.Button(main_game, text="", command=lambda row=row, col=col: button_click(row, col))
-            button.grid(row=row, column=col, padx=2, pady=2)
+            button = tk.Button(grid_frame, text="", height=3, width=10, command=lambda row=row, col=col: button_click(row, col))
+            button.config(bg= configure.FIELD_FG_COLOR)
+            button.grid(row=row, column=col, padx=3, pady=3, sticky = 'news')
             button_row.append(button)
         buttons.append(button_row)
+
+
+    mines_left = ttk.Label(master = main_game, text= 'Mines Left',font= configure.HEADER2_FONT)
+    mines_left.pack(padx= 20,pady= 20,side= 'left', anchor= 'n',)
 
 
     print(buttons)
