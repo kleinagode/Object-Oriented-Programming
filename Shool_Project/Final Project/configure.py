@@ -2,7 +2,11 @@
 WIDTH = 1000
 HEIGHT = 800
 THEME = 'morph'
+
 HEADER1_FONT = ('Zig',30)
 HEADER2_FONT = ('White Rabbit',18)
+MINE_FONT = ('White Rabbit',18)
+REVEAL_MINES_FONT = ('White Rabbit',12)
+
 FIELD_FG_COLOR = '#4169E1'
 FIELD_BG_COLOR = '#CCCCFF'
