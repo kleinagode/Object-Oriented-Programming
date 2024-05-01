@@ -7,7 +7,7 @@ def main():
 
     console_screen = tb.Window(themename= 'morph')
     console_screen.title('Gaming Console')
-    console_screen.geometry('600x200')
+    console_screen.geometry('700x300')
 
     
 
@@ -25,10 +25,10 @@ def main():
         call(['python', 'rps.py'])
 
     def dominos_game():
-        call(['python', ''])
+        call(['python', 'Domino_GUI.py'])
 
     def bj_game():
-        call(['python', ''])
+        call(['python', 'Black_Jack_GUI.py'])
 
     minesweeper_button = tk.Button(master= grid_frame, text= 'Mine Sweeper', font= configure.HEADER2_FONT, command= minesweeper_game)
 

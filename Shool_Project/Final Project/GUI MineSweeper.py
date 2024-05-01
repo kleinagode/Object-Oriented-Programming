@@ -149,7 +149,7 @@ def main_game_screen(difficulty):
     main_game = tb.Window(themename = configure.THEME)
     main_game.geometry(f"{configure.WIDTH}x{configure.HEIGHT}")
     main_game.title("Mine Sweeper")
-    main_game.resizable(False,False)
+    
 
     #Mine fields
     grid_frame = tk.Frame()
