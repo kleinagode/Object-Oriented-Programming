@@ -1,6 +1,6 @@
 
 WIDTH = 1000
-HEIGHT = 800
+HEIGHT = 900
 THEME = 'morph'
 
 HEADER1_FONT = ('Zig',30)
